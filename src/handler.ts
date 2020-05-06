@@ -1,6 +1,10 @@
-import { APIGatewayProxyHandler } from "aws-lambda/trigger/api-gateway-proxy"
+import log4js from 'log4js'
+import { APIGatewayProxyHandler } from 'aws-lambda/trigger/api-gateway-proxy'
+
+const log = log4js.getLogger('app')
 
 export const hello: APIGatewayProxyHandler = async (event, _context) => {
+    log.info('Processing event ${event}')
     return {
         statusCode: 200,
         body: JSON.stringify({
