@@ -1,0 +1,37 @@
+service: serverless-todo-v1
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  apiGateway:
+    minimumCompressionSize: 1024 # Enable gzip compression for responses > 1 KB
+  environment:
+    AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1
+
+# ===================================================================================
+package:
+  individually: true
+#  exclude:
+#    - .cache/**
+#    - dist/**
+
+plugins:
+#  - serverless-stack-output
+  - serverless-plugin-parcel
+
+# custom:
+#  output:
+#    file: .build/stack.json
+
+# ===================================================================================
+
+functions:
+  HelloHandler:
+    handler: src/handler.hello
+    events:
+      - http:
+          method: GET 
+          path: /hello
+          cors:
+            origins:
+              - '*'
