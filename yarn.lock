@@ -870,18 +870,6 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@dazn/lambda-powertools-correlation-ids@^1.23.0":
-  version "1.23.0"
-  resolved "https://registry.yarnpkg.com/@dazn/lambda-powertools-correlation-ids/-/lambda-powertools-correlation-ids-1.23.0.tgz#0bd32aa71429f22d3dfa6116e8a9402d9d1b32f8"
-  integrity sha512-2yHEiSmbnjsudFa1csV/PsyDYuXH3fyz0jju8hJJQ+7ozZF19dem0oAhlWRv+B2PsHo8jwYCa4GjpOEKztoYDQ==
-
-"@dazn/lambda-powertools-logger@^1.23.1":
-  version "1.23.1"
-  resolved "https://registry.yarnpkg.com/@dazn/lambda-powertools-logger/-/lambda-powertools-logger-1.23.1.tgz#cb9f4fbe4edec84bdfcceea419dbed54c70c40b7"
-  integrity sha512-v4EM1+l2BCC6fGy99qnxjLrcmk9ikxlrt5k9GpTZbJqW6SX0QE8qq18rf98u7ICaHlaa86bHwPv0EDxBg3o+cg==
-  dependencies:
-    "@dazn/lambda-powertools-correlation-ids" "^1.23.0"
-
 "@iarna/toml@^2.2.0":
   version "2.2.5"
   resolved "https://registry.yarnpkg.com/@iarna/toml/-/toml-2.2.5.tgz#b32366c89b43c6f8cefbdefac778b9c828e3ba8c"
