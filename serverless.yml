@@ -30,4 +30,4 @@ custom:
 # ===================================================================================
 
 functions:
-  - '${file(src/todos/lambda/todos.serverless.yml)}'
+  - '${file(src/todos/lambda/functions/todos.serverless.yml)}'

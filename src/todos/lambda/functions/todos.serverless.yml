@@ -1,24 +1,24 @@
   list:
-    handler: src/todos/lambda/listTodos.handler
+    handler: src/todos/lambda/functions/listTodos.handler
     events:
       - http: get /todos
   
   get:
-    handler: src/todos/lambda/getTodos.handler
+    handler: src/todos/lambda/functions/getTodos.handler
     events:
       - http: get /todos/{id}
 
   create:
-    handler: src/todos/lambda/createTodo.handler
+    handler: src/todos/lambda/functions/createTodo.handler
     events:
       - http: post /todos
 
   update:
-    handler: src/todos/lambda/updateTodo.handler
+    handler: src/todos/lambda/functions/updateTodo.handler
     events:
       - http: patch /todos/{id}
 
   delete:
-    handler: src/todos/lambda/deleteTodo.handler
+    handler: src/todos/lambda/functions/deleteTodo.handler
     events:
       - http: delete /todos/{id}
