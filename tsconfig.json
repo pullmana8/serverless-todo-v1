@@ -32,7 +32,7 @@
         "resolveJsonModule": true
     },
     "include": [
-        "src/**/*", "index.ts"
+        "src/**/*", "test/handler.ts"
     ],
     "exclude": [
         "node_modules/**/*",
