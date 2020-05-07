@@ -3,6 +3,7 @@ service: serverless-todo-v1
 provider:
   name: aws
   runtime: nodejs12.x
+  region: us-east-1
   apiGateway:
     minimumCompressionSize: 1024 # Enable gzip compression for responses > 1 KB
   environment:
@@ -18,20 +19,15 @@ package:
 plugins:
 #  - serverless-stack-output
   - serverless-plugin-parcel
+  - serverless-offline
 
-# custom:
+custom:
+  serverless-offline:
+    host: 0.0.0.0
 #  output:
 #    file: .build/stack.json
 
 # ===================================================================================
 
 functions:
-  HelloHandler:
-    handler: src/handler.hello
-    events:
-      - http:
-          method: GET 
-          path: /hello
-          cors:
-            origins:
-              - '*'
+  - '${file(src/todos/lambda/todos.serverless.yml)}'

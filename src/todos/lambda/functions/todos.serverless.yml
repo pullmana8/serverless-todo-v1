@@ -1,0 +1,34 @@
+service: todos-api
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  region: us-east-1
+
+functions:
+
+  list:
+    handler: src/todos/lambda/listTodos.handler
+    events:
+      - http: get /todos
+  
+  get:
+    handler: src/todos/lambda/getTodos.handler
+    events:
+      - http: get /todos/{id}
+
+  create:
+    handler: src/todos/lambda/createTodo.handler
+    events:
+      - http: post /todos
+
+  update:
+    handler: src/todos/lambda/updateTodo.handler
+    events:
+      - http: patch /todos/{id}
+
+  delete:
+    handler: src/todos/lambda/deleteTodo.handler
+    events:
+      - http: delete /todos/{id}

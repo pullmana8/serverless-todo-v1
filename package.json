@@ -4,11 +4,21 @@
   "description": "Serverless todo app in Typescript from scratch",
   "main": "index.js",
   "scripts": {
+    "analyse": "yarn lint && yarn test",
+    "clean": "rimrag .build .serverless .nyc_output coverage",
+    "coverage": "nyc report --report=text-lcov | coveralls",
     "lint": "eslint . --ext ts,js --no-ignore --fix",
     "sls": "SLS_DEBUG=* serverless deploy --debug -v --aws-profile=serverless",
-    "remove": "SLS_DEBUG=* serverless remove"
+    "remove": "SLS_DEBUG=* serverless remove",
+    "test": "jest"
   },
-  "keywords": [],
+  "keywords": [
+    "aws",
+    "lambda",
+    "serverless",
+    "typescript",
+    "tslint"
+  ],
   "author": "Antonette Caldwell",
   "license": "ISC",
   "devDependencies": {
@@ -19,31 +29,44 @@
     "@babel/plugin-transform-runtime": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
     "@babel/preset-typescript": "^7.9.0",
+    "@shelf/jest-dynamodb": "^1.7.0",
     "@types/aws-lambda": "^8.10.51",
+    "@types/chai": "^4.2.11",
+    "@types/jest": "^25.2.1",
+    "@types/mocha": "^7.0.2",
     "@typescript-eslint/eslint-plugin": "^2.31.0",
     "@typescript-eslint/parser": "^2.31.0",
+    "aws-lambda": "^1.0.6",
     "aws-sdk": "^2.671.0",
     "babel-core": "^6.26.3",
+    "babel-jest": "^26.0.1",
     "babel-plugin-module-resolver": "^4.0.0",
+    "coveralls": "^3.1.0",
+    "debug": "^4.1.1",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.11.0",
     "husky": "^4.2.5",
+    "jest": "^26.0.1",
     "lint-staged": "^10.2.2",
     "log4js": "^6.2.1",
+    "nyc": "^15.0.1",
     "parcel-bundler": "^1.12.4",
     "prettier": "^2.0.5",
+    "rimraf": "^3.0.2",
     "serverless": "^1.69.0",
+    "serverless-offline": "^6.1.5",
     "serverless-plugin-parcel": "^0.1.1",
     "serverless-stack-output": "^0.2.3",
+    "ts-jest": "^25.5.0",
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "aws-lambda": "^1.0.6",
-    "debug": "^4.1.1"
+    "dotenv": "^8.2.0",
+    "global": "^4.4.0"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && yarn test"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
