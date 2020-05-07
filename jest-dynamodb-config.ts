@@ -16,3 +16,13 @@ export const tables = [
         port: 8000
     },
 ];
+
+// export const clearMocks = true;
+// export const coverageDirectory = "coverage";
+// export const preset = "@shelf/jest-dynamodb";
+// export const testEnvironment = "node";
+
+/* module.exports = {
+    tables: [
+        {
+            */
